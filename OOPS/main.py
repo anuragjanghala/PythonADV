@@ -54,12 +54,51 @@ class Item:
         
         
     def __repr__(self):
-        return f"Item('{self.name}, {self.price}, {self.quantity}')"
+        return f"{self.__class__.__name__}('{self.name}, {self.price}, {self.quantity}')"
+
+# Inheritance
+# here we are inheriting from Item class(Parent Class) to Phone class(Child class)
+class Phone(Item):
+    # all = []
+    def __init__(self, name: str, price: float, quantity = 0, broken_phones = 0):
+        #print(f'an instance created: {name}')
+        
+        # Call to super function to have access to all attributes / methods
+        super().__init__(
+            name,price,quantity
+        )
+        
+        # Run validations to the recieved arguments
+        assert broken_phones >= 0, f"Broken phones {broken_phones} is not greater than or equal to zero!"
+        
+        # Assign to self object
+        self.broken_phones = broken_phones
+        
+        
+        # Actions to execute
+        # Phone.all.append(self)
+
+
+phone1 = Phone("jscPhonev10", 500, 5, 1)
+
+print(Item.all)
+print(Phone.all)
+
+
+# phone1 = Phone("jscPhonev10", 500, 5, 1)
+# print(phone1.calculate_total_price())
+# # phone1.broken_phones = 1
+# phone2 = Phone("jscPhonev20", 700, 5, 1)
+# # phone2.broken_phones = 1
+
+
+
+
         
 # Item.instantiate_from_csv()
 # print(Item.all)
 
-print(Item.is_integer(7.0))
+# print(Item.is_integer(7.0))
 
 
 
