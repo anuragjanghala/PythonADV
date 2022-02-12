@@ -22,10 +22,14 @@ class Item:
     @property
     # Property Decorator = Read-only Attribute
     def name(self):
+        #print('you are trying to get an attribute')
         return self.__name  # this double underscore will create private readonly attribute
     
     @name.setter # this decorator can be used to set new value to private read-only attribute attribute
     def name(self, value):
+        #print('you are trying to set an attribute')
+        if len(value) > 10:
+            raise Exception('The name is too long')
         self.__name = value  # here we can set new values
     
     def calculate_total_price(self):
