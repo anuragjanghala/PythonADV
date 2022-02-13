@@ -65,12 +65,35 @@ from item import Item
 ############################################################
 # Inheritance : is a mechanism that allows us to re-use code across classes
 
-from phone import Phone
+# from phone import Phone
 
-item1 = Phone("AjPhone", 1000, 3)
+# item1 = Phone("AjPhone", 1000, 3)
 
-item1.apply_increment(0.2)
+# item1.apply_increment(0.2)
 
-print(item1.price) # even this works showing inheritance works
+# print(item1.price) # even this works showing inheritance works
 
-item1.send_email() # shows no error as it was inherit from parent class Item
+# item1.send_email() # shows no error as it was inherit from parent class Item
+
+
+
+#############################################################
+# Polymorphism : use of single type entity to represent different types in different scenarios.
+# many forms
+
+# name = "jim" # str
+# print(len(name)) # 3
+
+# some_list = ['some','name'] # list
+# print(len(some_list)) # 2
+# # that's polymorphism in action, a single function does know
+# # how to handle different kinds of objects as expected!
+
+from keyboard import Keyboard
+
+item1 = Keyboard("jsckeyboard", 1000, 3)
+
+item1.apply_discount()
+
+print(item1.price) # this will works and shows polymorphism
+# we can control this discount by providing new pay_rate to class of keyboard show how much we can control
