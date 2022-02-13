@@ -7,17 +7,17 @@ from item import Item
 
 # but if want to make read only attributes we need use encapsulation
 
-item1 = Item("myitem", 750)
+# item1 = Item("myitem", 750)
 
-print(item1.name)
+# print(item1.name)
 
 # setting an attribute
-item1.name = "otheritem"    
+# item1.name = "otheritem"    
 # this will only work if we use getters and setters with decorators
 # if we dont put setters it will stay read-only
 
 # getting an attribute
-print(item1.name)
+# print(item1.name)
 
 
 
@@ -33,10 +33,28 @@ print(item1.name)
 # item1.read_only_name = "BBB"  # Error : AttributeError: can't set attribute
 
 
+
+###########################################################
 # Encapsulation
 
-# item1.price = 900
+# item1 = Item("myitem", 750)
 
-item1.apply_increment(0.2)
+# # item1.price = 900
 
-print(item1.price)
+# item1.apply_increment(0.2)
+
+# item1.apply_discount
+
+# print(item1.price)
+
+
+
+############################################################
+# Abstraction : that shows only necessary attributes hiding unnecessary informations
+# hiding unnecessary details from user
+
+item1 = Item('myitem', 750, 6)
+
+item1.send_email()
+
+item1.conenct()  # this will show error as it was hidden cant be accessed by instance.

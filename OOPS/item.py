@@ -83,3 +83,24 @@ class Item:
     # @property
     # def read_only_name(self):
     #     return "AAA"
+    
+    # adding double underscore we hide methods (private methods)
+    def __connect(self, smpt_server):
+        pass
+    
+    
+    def __prepare_body(self):
+        return f"""
+                Hello someone
+                We have {self.name} {self.quantity} times.
+                Regards, AJ
+                """
+    
+    def __send(self):
+        pass
+    
+    
+    def send_email(self):
+        self.__connect('')
+        self.__prepare_body()
+        self.__send()
