@@ -21,9 +21,6 @@ print(item1.name)
 
 
 
-
-
-
 # item1._name = "otheritem" # this will work
 
 # print(item1.name)
@@ -34,3 +31,12 @@ print(item1.name)
 # print(item1.read_only_name)
 
 # item1.read_only_name = "BBB"  # Error : AttributeError: can't set attribute
+
+
+# Encapsulation
+
+# item1.price = 900
+
+item1.apply_increment(0.2)
+
+print(item1.price)
