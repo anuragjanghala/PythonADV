@@ -53,8 +53,24 @@ from item import Item
 # Abstraction : that shows only necessary attributes hiding unnecessary informations
 # hiding unnecessary details from user
 
-item1 = Item('myitem', 750, 6)
+# item1 = Item('myitem', 750, 6)
 
-item1.send_email()
+# item1.send_email()
 
-item1.conenct()  # this will show error as it was hidden cant be accessed by instance.
+# item1.conenct()  # this will show error as it was hidden cant be accessed by instance.
+
+
+
+
+############################################################
+# Inheritance : is a mechanism that allows us to re-use code across classes
+
+from phone import Phone
+
+item1 = Phone("AjPhone", 1000, 3)
+
+item1.apply_increment(0.2)
+
+print(item1.price) # even this works showing inheritance works
+
+item1.send_email() # shows no error as it was inherit from parent class Item
