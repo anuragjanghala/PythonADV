@@ -51,33 +51,68 @@
 
 
 ######################################################################
-from collections import defaultdict
+# from collections import defaultdict
 
-default_dict = defaultdict(int)
+# default_dict = defaultdict(int)
 
-default_dict['a'] = 1
-default_dict['b'] = 2
+# default_dict['a'] = 1
+# default_dict['b'] = 2
 
-print(default_dict)
-print(default_dict['a'])
-print(default_dict[0])
-
-
-default_dict = defaultdict(list)
-
-default_dict['a'] = 1
-default_dict['b'] = 2
-
-print(default_dict)
-print(default_dict['a'])
-print(default_dict[0])
+# print(default_dict)
+# print(default_dict['a'])
+# print(default_dict[0])
 
 
-default_dict = {} # in this case normal dictionary
+# default_dict = defaultdict(list)
 
-default_dict['a'] = 1
-default_dict['b'] = 2
+# default_dict['a'] = 1
+# default_dict['b'] = 2
 
-print(default_dict)
-print(default_dict['a'])
-print(default_dict[0]) # this will raise key error
+# print(default_dict)
+# print(default_dict['a'])
+# print(default_dict[0])
+
+
+# default_dict = {} # in this case normal dictionary
+
+# default_dict['a'] = 1
+# default_dict['b'] = 2
+
+# print(default_dict)
+# print(default_dict['a'])
+# print(default_dict[0]) # this will raise key error
+
+
+###################################################################
+from collections import deque
+
+d = deque()
+
+d.append(1)
+d.append(2)
+
+print(d)
+
+d.appendleft(3)
+print(d)
+
+d.pop()
+print(d)
+
+d.popleft()
+print(d)
+
+d.extend([4,5,6])
+print(d)
+
+d.extendleft([7,8,9])
+print(d)
+
+d.rotate(1)
+print(d)
+
+d.rotate(2)
+print(d)
+
+d.rotate(-1)
+print(d)
