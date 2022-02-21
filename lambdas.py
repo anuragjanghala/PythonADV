@@ -36,10 +36,24 @@
 
 # map(function, sequence)
 
-a = [1,2,3,4,5]
-b = map(lambda x: x*2, a)
+# a = [1,2,3,4,5]
+# b = map(lambda x: x*2, a)
+# print(list(b))
+
+# # list comprehension
+# c = [x*2 for x in a]
+# print(c)
+
+
+######################################################################
+
+# filter(func, seq) # func must return true or false, and filter function must return all the elements for which func evaluates to true
+
+a = [1,2,3,4,5,6]
+
+b = filter(lambda x: x%2 == 0, a)
 print(list(b))
 
-# list comprehension
-c = [x*2 for x in a]
+# with list comprehension
+c = [x for x in a if x%2 == 0]
 print(c)
