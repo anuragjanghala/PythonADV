@@ -1,32 +1,45 @@
 # lambda arguments: expression
 
-add10 = lambda x: x+10
-print(add10(5)) # 15
+# add10 = lambda x: x+10
+# print(add10(5)) # 15
 
-# alternative function for lambda function
-def add10_function(x):
-    return x + 10
+# # alternative function for lambda function
+# def add10_function(x):
+#     return x + 10
 
-mult = lambda x,y: x * y
+# mult = lambda x,y: x * y
 
-print(mult(2, 7)) # 14
+# print(mult(2, 7)) # 14
 
 
 
-poinst2D = [(1,2), (15,1), (5,-1), (10,4)]
-poinst2D_sorted = sorted(poinst2D)
+# poinst2D = [(1,2), (15,1), (5,-1), (10,4)]
+# poinst2D_sorted = sorted(poinst2D)
 
-print(poinst2D)
-print(poinst2D_sorted)
+# print(poinst2D)
+# print(poinst2D_sorted)
 
-poinst2D = [(1,2), (15,1), (5,-1), (10,4)]
-poinst2D_sorted = sorted(poinst2D, key=lambda x: x[1])
+# poinst2D = [(1,2), (15,1), (5,-1), (10,4)]
+# poinst2D_sorted = sorted(poinst2D, key=lambda x: x[1])
 
-print(poinst2D)
-print(poinst2D_sorted)
+# print(poinst2D)
+# print(poinst2D_sorted)
 
-poinst2D = [(1,2), (15,1), (5,-1), (10,4)]
-poinst2D_sorted = sorted(poinst2D, key=lambda x: x[0]+x[1])
+# poinst2D = [(1,2), (15,1), (5,-1), (10,4)]
+# poinst2D_sorted = sorted(poinst2D, key=lambda x: x[0]+x[1])
 
-print(poinst2D)
-print(poinst2D_sorted)
+# print(poinst2D)
+# print(poinst2D_sorted)
+
+
+######################################################################
+
+# map(function, sequence)
+
+a = [1,2,3,4,5]
+b = map(lambda x: x*2, a)
+print(list(b))
+
+# list comprehension
+c = [x*2 for x in a]
+print(c)
