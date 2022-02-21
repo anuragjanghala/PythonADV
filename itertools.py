@@ -65,35 +65,57 @@
 
 
 ######################################################################
-from itertools import groupby
+# from itertools import groupby
 
 
-def smaller_than_3(x):
-    return x < 3 # will return true or false
+# def smaller_than_3(x):
+#     return x < 3 # will return true or false
 
-a = [1,2,3,4]
-group_obj = groupby(a, key=smaller_than_3)
-print(group_obj)
+# a = [1,2,3,4]
+# group_obj = groupby(a, key=smaller_than_3)
+# print(group_obj)
 
-for key, value in group_obj:
-    print(key, list(value))
-
-
-    
-
-a = [1,2,3,4]
-group_obj = groupby(a, key=lambda x: x<3)
-print(group_obj)
-
-for key, value in group_obj:
-    print(key, list(value))
-    
+# for key, value in group_obj:
+#     print(key, list(value))
 
 
     
-persons = [{'name': 'Tim', 'age': 25}, {'name': 'Dan', 'age': 25},
-           {'name': 'Lisa', 'age': 27}, {'name': 'Claire', 'age': 28}]
 
-group_obj = groupby(persons, key= lambda x: x['age'])
-for key, value in group_obj:
-    print(key, list(value))
+# a = [1,2,3,4]
+# group_obj = groupby(a, key=lambda x: x<3)
+# print(group_obj)
+
+# for key, value in group_obj:
+#     print(key, list(value))
+    
+
+
+    
+# persons = [{'name': 'Tim', 'age': 25}, {'name': 'Dan', 'age': 25},
+#            {'name': 'Lisa', 'age': 27}, {'name': 'Claire', 'age': 28}]
+
+# group_obj = groupby(persons, key= lambda x: x['age'])
+# for key, value in group_obj:
+#     print(key, list(value))
+
+
+
+#########################################################################
+from itertools import count, cycle, repeat
+
+for i in count(10):
+    print(i)
+    
+    if i == 15:
+        break
+
+a = [1,2,3]
+for i in cycle(a):
+    print(i)
+
+for i in repeat(1): # this will repeat 1 infinite times
+    print(i)
+    
+
+for i in repeat(1,4): # this will repeat 1 four times
+    print(i)
