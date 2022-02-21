@@ -49,11 +49,22 @@
 
 # filter(func, seq) # func must return true or false, and filter function must return all the elements for which func evaluates to true
 
-a = [1,2,3,4,5,6]
+# a = [1,2,3,4,5,6]
 
-b = filter(lambda x: x%2 == 0, a)
-print(list(b))
+# b = filter(lambda x: x%2 == 0, a)
+# print(list(b))
 
-# with list comprehension
-c = [x for x in a if x%2 == 0]
-print(c)
+# # with list comprehension
+# c = [x for x in a if x%2 == 0]
+# print(c)
+
+
+#######################################################################
+
+# reduce(func, seq) # it repeatedly applies the function on sequence till it gets the single value
+
+from functools import reduce
+a = [1,2,3,4]
+
+product_a = reduce(lambda x,y: x*y, a)
+print(product_a)
