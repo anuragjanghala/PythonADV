@@ -15,12 +15,25 @@
 # print(list(prod))
 
 ######################################################################
-from itertools import permutations
+# from itertools import permutations
 
-a = [1,2,3]
+# a = [1,2,3]
 
-perm  = permutations(a)
-print(list(perm))
+# perm  = permutations(a)
+# print(list(perm))
 
-perm  = permutations(a, 2) # for shorter length permutation
-print(list(perm))
+# perm  = permutations(a, 2) # for shorter length permutation
+# print(list(perm))
+
+
+
+######################################################################
+from itertools import combinations, combinations_with_replacement
+
+a = [1,2,3,4]
+
+comb  = combinations(a, 2) # length is mandatory
+print(list(comb))
+
+comb_wr = combinations_with_replacement(a, 2)
+print(list(comb_wr))
