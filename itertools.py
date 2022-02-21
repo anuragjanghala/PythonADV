@@ -28,12 +28,37 @@
 
 
 ######################################################################
-from itertools import combinations, combinations_with_replacement
+# from itertools import combinations, combinations_with_replacement
+
+# a = [1,2,3,4]
+
+# comb  = combinations(a, 2) # length is mandatory
+# print(list(comb))
+
+# comb_wr = combinations_with_replacement(a, 2)
+# print(list(comb_wr))
+
+
+
+######################################################################
+from itertools import accumulate
+import operator
 
 a = [1,2,3,4]
+acc = accumulate(a) # by default it will sum
+print(a)
+print(list(acc))
 
-comb  = combinations(a, 2) # length is mandatory
-print(list(comb))
+acc = accumulate(a, func=operator.mul) # it will do mul
+print(a)
+print(list(acc))
 
-comb_wr = combinations_with_replacement(a, 2)
-print(list(comb_wr))
+a = [1,2,5,3,4]
+acc = accumulate(a, func=max) # will get max
+print(a)
+print(list(acc))
+
+a = [2,5,3,1,4]
+acc = accumulate(a, func=min) # will get min
+print(a)
+print(list(acc))
