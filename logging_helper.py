@@ -34,10 +34,34 @@
 ###################################################################
 # using logging config file
 
-import logging
-import logging.config
+# import logging
+# import logging.config
 
-logging.config.fileConfig('logging.conf')
-# there is also dict config which is just different syntax for doing the logging
-logger = logging.getLogger('simpleExample')
-logger.debug('this is a debug message')
+# logging.config.fileConfig('logging.conf')
+# # there is also dict config which is just different syntax for doing the logging
+# logger = logging.getLogger('simpleExample')
+# logger.debug('this is a debug message')
+
+
+###################################################################
+import logging
+
+try:
+    a = [1,2,3]
+    val = a[4]
+except IndexError as e:
+    logging.error(e)
+    
+try:
+    a = [1,2,3]
+    val = a[4]
+except IndexError as e:
+    logging.error(e, exc_info=True)
+    
+import traceback    
+    
+try:
+    a = [1,2,3]
+    val = a[4]
+except:
+    logging.error('the error is %s', traceback.format_exc())
