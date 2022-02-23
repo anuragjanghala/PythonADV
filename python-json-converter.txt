@@ -1,0 +1,11 @@
+python  JSON
+dict    object
+list    array
+tuple   array
+str     string
+int     number
+long    number
+float   number
+True    true
+False   false
+None    null
