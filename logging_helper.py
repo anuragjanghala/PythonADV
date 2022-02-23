@@ -44,24 +44,40 @@
 
 
 ###################################################################
-import logging
+# import logging
 
-try:
-    a = [1,2,3]
-    val = a[4]
-except IndexError as e:
-    logging.error(e)
+# try:
+#     a = [1,2,3]
+#     val = a[4]
+# except IndexError as e:
+#     logging.error(e)
     
-try:
-    a = [1,2,3]
-    val = a[4]
-except IndexError as e:
-    logging.error(e, exc_info=True)
+# try:
+#     a = [1,2,3]
+#     val = a[4]
+# except IndexError as e:
+#     logging.error(e, exc_info=True)
     
-import traceback    
+# import traceback    
     
-try:
-    a = [1,2,3]
-    val = a[4]
-except:
-    logging.error('the error is %s', traceback.format_exc())
+# try:
+#     a = [1,2,3]
+#     val = a[4]
+# except:
+#     logging.error('the error is %s', traceback.format_exc())
+
+
+##################################################################
+import logging
+from logging.handlers import RotatingFileHandler
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# roll over after 2kb, and keep backup logs app.log.1, app.log.2, etc
+
+handler = RotatingFileHandler('app.log', maxBytes=2000, backupCount=5)
+logger.addHandler(handler)
+
+for _ in range(10000):
+    logger.info('hello, world!')
