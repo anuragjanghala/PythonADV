@@ -35,24 +35,38 @@ import random
 
 # for reproducable random numbers we use random.seed()
 
-random.seed(1)
-print(random.random())
-print(random.randint(1,10))
-random.seed(1)
-print(random.random())
-print(random.randint(1,10))
+# random.seed(1)
+# print(random.random())
+# print(random.randint(1,10))
+# random.seed(1)
+# print(random.random())
+# print(random.randint(1,10))
 
 
-random.seed(1)
-print(random.random())
-print(random.randint(1,10))
-random.seed(2)
-print(random.random())
-print(random.randint(1,10))
-random.seed(1)
-print(random.random())
-print(random.randint(1,10))
-random.seed(2)
-print(random.random())
-print(random.randint(1,10))
+# random.seed(1)
+# print(random.random())
+# print(random.randint(1,10))
+# random.seed(2)
+# print(random.random())
+# print(random.randint(1,10))
+# random.seed(1)
+# print(random.random())
+# print(random.randint(1,10))
+# random.seed(2)
+# print(random.random())
+# print(random.randint(1,10))
 
+#################################################################
+
+import secrets
+
+a = secrets.randbelow(10)
+print(a) # it will create an integer from range 0 to 10, excluding 10
+
+a = secrets.randbits(4)
+print(a) # it will create random number from bits 0000 to 1111 as input was 4
+
+
+mylist = list('ABCDEFGH')
+a = secrets.choice(mylist)
+print(a) # this will pick a choice that is not reproducable
