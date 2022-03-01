@@ -17,16 +17,42 @@ import random
 
 #################################################################
 
-mylist = list('ABCDEFGH')
-print(mylist)
-a = random.choice(mylist)
-print(a)
+# mylist = list('ABCDEFGH')
+# print(mylist)
+# a = random.choice(mylist)
+# print(a)
 
-a = random.sample(mylist, 3)
-print(a) # this wont pick element twice
+# a = random.sample(mylist, 3)
+# print(a) # this wont pick element twice
 
-a = random.choices(mylist, k=3)
-print(a) # this can pick element multiple times
+# a = random.choices(mylist, k=3)
+# print(a) # this can pick element multiple times
 
-random.shuffle(mylist)
-print(mylist) # elements will be shuffled
+# random.shuffle(mylist)
+# print(mylist) # elements will be shuffled
+
+#################################################################
+
+# for reproducable random numbers we use random.seed()
+
+random.seed(1)
+print(random.random())
+print(random.randint(1,10))
+random.seed(1)
+print(random.random())
+print(random.randint(1,10))
+
+
+random.seed(1)
+print(random.random())
+print(random.randint(1,10))
+random.seed(2)
+print(random.random())
+print(random.randint(1,10))
+random.seed(1)
+print(random.random())
+print(random.randint(1,10))
+random.seed(2)
+print(random.random())
+print(random.randint(1,10))
+
