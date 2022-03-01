@@ -91,14 +91,34 @@
 
 ################################################################
 
-def fibonacci(limit):
-    # 0 1 1 2 3 5 8 13 21 34 ....
-    a, b = 0, 1
-    while a<limit:
-        yield a
-        a, b = b, a+b
+# def fibonacci(limit):
+#     # 0 1 1 2 3 5 8 13 21 34 ....
+#     a, b = 0, 1
+#     while a<limit:
+#         yield a
+#         a, b = b, a+b
         
-fib = fibonacci(34)
+# fib = fibonacci(34)
 
-for i in fib:
-    print(i)
+# for i in fib:
+#     print(i)
+    
+    
+#################################################################
+
+# generator expression
+
+# mygenerator_obj = (i for i in range(10) if i % 2 == 0)
+
+# print(type(mygenerator_obj))
+
+# print(list(mygenerator_obj))
+# for i in mygenerator_obj:
+#     print(i)
+    
+import sys
+mygenerator_obj = (i for i in range(1_000) if i % 2 == 0)
+print(sys.getsizeof(mygenerator_obj))
+
+mylist = [i for i in range(1_000) if i % 2 == 0]
+print(sys.getsizeof(mylist))
