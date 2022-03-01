@@ -52,37 +52,53 @@
 # value = next(cd)
 # print(value)
 
-import sys
+# import sys
 
-# without generator it takes memory
-def firstn(n):
-    nums = []
-    num = 0
-    while num < n:
-        nums.append(num)
-        num += 1
-    return nums
+# # without generator it takes memory
+# def firstn(n):
+#     nums = []
+#     num = 0
+#     while num < n:
+#         nums.append(num)
+#         num += 1
+#     return nums
 
-print(firstn(10))
-print(sum(firstn(10)))
+# print(firstn(10))
+# print(sum(firstn(10)))
 
 
-# with generator
-def firstn_gen(n):
-    num = 0
-    while num < n:
-        yield num
-        num += 1
+# # with generator
+# def firstn_gen(n):
+#     num = 0
+#     while num < n:
+#         yield num
+#         num += 1
         
-for i in firstn_gen(10):
+# for i in firstn_gen(10):
+#     print(i)
+        
+# print(sum(firstn_gen(10)))
+
+
+# #size comparison
+# print(sys.getsizeof(firstn(10)))
+# print(sys.getsizeof(firstn_gen(10)))
+
+# print(sys.getsizeof(firstn(1_000_000)))
+# print(sys.getsizeof(firstn_gen(1_000_000)))
+
+
+
+################################################################
+
+def fibonacci(limit):
+    # 0 1 1 2 3 5 8 13 21 34 ....
+    a, b = 0, 1
+    while a<limit:
+        yield a
+        a, b = b, a+b
+        
+fib = fibonacci(34)
+
+for i in fib:
     print(i)
-        
-print(sum(firstn_gen(10)))
-
-
-#size comparison
-print(sys.getsizeof(firstn(10)))
-print(sys.getsizeof(firstn_gen(10)))
-
-print(sys.getsizeof(firstn(1_000_000)))
-print(sys.getsizeof(firstn_gen(1_000_000)))
