@@ -58,15 +58,46 @@ import random
 
 #################################################################
 
-import secrets
+# import secrets
 
-a = secrets.randbelow(10)
-print(a) # it will create an integer from range 0 to 10, excluding 10
+# a = secrets.randbelow(10)
+# print(a) # it will create an integer from range 0 to 10, excluding 10
 
-a = secrets.randbits(4)
-print(a) # it will create random number from bits 0000 to 1111 as input was 4
+# a = secrets.randbits(4)
+# print(a) # it will create random number from bits 0000 to 1111 as input was 4
 
 
-mylist = list('ABCDEFGH')
-a = secrets.choice(mylist)
-print(a) # this will pick a choice that is not reproducable
+# mylist = list('ABCDEFGH')
+# a = secrets.choice(mylist)
+# print(a) # this will pick a choice that is not reproducable
+
+
+#################################################################
+
+import numpy as np
+
+a = np.random.rand(3)
+print(a) # 1d array
+
+a = np.random.rand(3,3)
+print(a) # 2d array
+
+a = np.random.rand(3,3,3)
+print(a) # 3d array
+
+# with random integers
+a = np.random.randint(0, 10, 3)
+print(a) # 0 to 10 range, and 3 is array size
+
+a = np.random.randint(0, 10, (3,4))
+print(a) # 0 to 10 range, and (3,4) is 2d array size
+
+arr = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(arr)
+np.random.shuffle(arr)
+print(arr)
+
+np.random.seed(1) # this is different seed function based in numpy
+print(np.random.rand(3,3))
+np.random.seed(1)
+print(np.random.rand(3,3))
