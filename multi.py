@@ -42,23 +42,22 @@ def square_numbers():
         i*i
         time.sleep(0.1)
 
-threads = []
-num_threads = 10
-# print(num_processes)
-
-# create processes
-for i in range(num_threads):
-    t = Thread(target=square_numbers)
-    threads.append(t)
-
-# start processes
-
-for t in threads:
-    t.start() 
+if __name__ == '__main__':
+    threads = []
+    num_threads = 10
     
-# join
-for t in threads:
-    t.join()
+    for i in range(num_threads):
+        t = Thread(target=square_numbers)
+        threads.append(t)
+
+    # start threads
+
+    for t in threads:
+        t.start() 
+        
+    # join threads: wait for them to complete
+    for t in threads:
+        t.join()
 
 
 print('end main')
