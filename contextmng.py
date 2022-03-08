@@ -54,7 +54,6 @@
 # context management using methods
 
 from contextlib import contextmanager
-from typing import final
 
 
 @contextmanager
